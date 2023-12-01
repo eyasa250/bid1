@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form | CodingLab</title>
+    <link rel="stylesheet" href="{{ asset('style/signuplogin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="wrapper">
+        <div class="title"><span>Sign Up Form</span></div>
+        <form action="{{ path('app_register') }}" method="post">
+            {{ form_start(registrationForm) }}
+            <div class="row">
+                {{ form_row(registrationForm.email, {'attr': {'class': 'input'}}) }}
+            </div>
+            <div class="row">
+                {{ form_row(registrationForm.plainPassword, {'attr': {'class': 'input'}}) }}
+            </div>
+            <div class="row">
+                {{ form_row(registrationForm.fullname, {'attr': {'class': 'input'}}) }}
+            </div>
+            <div class="row">
+                {{ form_row(registrationForm.phone, {'attr': {'class': 'input'}}) }}
+            </div>
+            <div class="row">
+                {{ form_row(registrationForm.address, {'attr': {'class': 'input'}}) }}
+            </div>
+
+
+            <div class="row button">
+                <input type="submit" value="{{ button_label|default('Signup') }}">
+            </div>
+            {{ form_end(registrationForm) }}
+            {#<div class="signup-link">You're a member? <a href="{{ path('app_user_login') }}">Login now</a></div>#}
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
